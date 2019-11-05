@@ -107,7 +107,7 @@ Testing Integer list & and all previous stub functions
 in this section
 =====================================
 */
-    cout << "Creating integerlist of size 5" << endl;
+    cout << "Creating integerList of size 5" << endl;
     unorderedArrayListType<int> integerList(5);
     
     //here we will test isEmpty()
@@ -141,8 +141,20 @@ in this section
     cout << "length: " << integerList.listSize() << endl;
 
     //try the copy constructor 
+    cout << "Creating newIntegerList through copy constructor" << endl;
+    unorderedArrayListType <int>newIntegerList(integerList);
+    cout << "newIntegerList (should be empty): ";
+    newIntegerList.print();
 
     //test for shallow copy by calling insertAt()
+    cout << "Testing for shallow copy by inputting data into newIntegerList" <<endl;
+    newIntegerList.insertAt(0,3);
+    newIntegerList.insertAt(1,4);
+    newIntegerList.insertAt(2,2);
+    cout << "newIntegerList: ";
+    newIntegerList.print();
+    cout << "integerList (should be empty): ";
+    integerList.print(); 
 
 
     return 0;                                   
