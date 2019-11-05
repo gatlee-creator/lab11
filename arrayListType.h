@@ -130,29 +130,31 @@ protected:
 template <class elemType>
 bool arrayListType<elemType>::isEmpty() const
 {
-    //Complete this function stub
-    return false;
+    if(length == 0)
+      return true;
+    else
+      return false;
 } // //end isEmpty
 
 template <class elemType>
 bool arrayListType<elemType>::isFull() const
 {
-    //Complete this function stub
-    return false;
+    if(length == maxSize)
+      return true;
+    else
+      return false;
 }  //end isFull
 
 template <class elemType>
 int arrayListType<elemType>::listSize() const
 {
-    //Complete this function stub
-    return -1;
+    return length;
 }  //end listSize
 
 template <class elemType>
 int arrayListType<elemType>::maxListSize() const
 {
-    //Complete this function stub
-    return -1;
+    return maxSize;
 }  //end maxListSize
 
 template <class elemType>
@@ -207,7 +209,7 @@ void arrayListType<elemType>::retrieveAt(int location,
 template <class elemType>
 void arrayListType<elemType>::clearList()
 {
-    //Complete this function stub
+   length = 0;
 } //end clearList
 
 template <class elemType>
@@ -238,7 +240,13 @@ template <class elemType>
 arrayListType<elemType>::arrayListType
                           (const arrayListType<elemType>& otherList)
 {
-    //Complete this function stub
+    maxSize = otherList.maxSize;
+    length = otherList.length;
+
+    list = new elemType[maxSize]; 	//create the array
+
+    for (int j = 0; j < length; j++)  //copy otherList
+        list [j] = otherList.list[j];   
 }//end copy constructor
 
 
