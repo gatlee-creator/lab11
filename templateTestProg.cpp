@@ -71,14 +71,14 @@ NEW TEST CODE EXTENSION BELOW (11 / 5 / 19)
     cout << "Updated list: ";
     numList.print();
 
-    //test isItemAtEqual here - SOMETHNG BROKEN HERE?
+    //test isItemAtEqual here
     cout << "Check if item is equal at a location" << endl;
     cout << "Type location: ";
     cin >> loc;
     cout << "Type comparison number: ";
     cin >> num;
     bool result = numList.isItemAtEqual(loc, num);
-    if(result == 0)
+    if(result == 1)
         cout << "Item is equal" << endl;
     else
         cout << "Item is NOT equal" << endl;
