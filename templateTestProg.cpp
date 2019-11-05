@@ -1,10 +1,20 @@
-//Data: 2.85 6.74 28.93 61.22 10.00 45.34 61.78 5.75
+/*
+    Name: Graham Atlee
+    Course: csc1720
+    Date: 11/5/19
+    Location of Program: ~/csc1720/Labs/lab11
 
+    This program contains driver code to test all the methods 
+    in the unorderedArrayListType class.
+
+*/
 #include <iostream>
 #include <string>
 #include "unorderedArrayListType.h"
 
 using namespace std; 
+
+//Test Data: 2.85 6.74 28.93 61.22 10.00 45.34 61.78 5.75
 
 int main() 
 {
