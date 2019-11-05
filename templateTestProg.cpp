@@ -161,6 +161,7 @@ in this section
 Testing String List 
 =====================================
 */
+    int i;
 
     cout << "Creating stringList with default constructor" << endl;
     unorderedArrayListType <string>stringList;
@@ -171,10 +172,47 @@ Testing String List
 
     //test insertEnd in a loop here 
     cout << "Inserting \"Apple\" into stringList 50 times" << endl;
-    for(int i=0; i < 50; i++)
+    for(i=0; i < 50; i++)
         stringList.insertEnd("Apple");
     stringList.print();
 
+    //call remove in a loop
+    cout << "Removing \"Apple\" 25 times" << endl;
+    for(i=0; i < 25; i++)
+        stringList.remove("Apple");
+    cout << "Updated stringList: ";
+    stringList.print();
+
+    //call insertAt in a loop with new word
+    cout << "Calling replaceAt 25 times to replace all \"Apple\"'s " << endl;
+    string replacement = "Pear";
+    for(i=0; i < 25; i++)
+        stringList.replaceAt(i, replacement);
+    cout << "Updated stringList: ";
+    stringList.print();
+
+    //insert a bunch of random data with insertEnd in loops
+    cout << "Inserting random data into the list with insertEnd" << endl;
+    for(i=0; i < 25; i++)
+        stringList.insertEnd("Orange");
+    for(i=0; i< 15; i++)
+        stringList.insertEnd("Grape");
+    for(i=0; i< 10; i++)
+        stringList.insertEnd("Banana");
+    stringList.print();
+    
+    //use seqsearch here 
+    cout << "Searching for \"Grape\". Should return index 50" << endl;
+    cout << stringList.seqSearch("Grape") << endl;
+
+    
+    cout << "stringList length: ";
+    cout << stringList.listSize() << endl;
+
+    //attempt to go over the list limit
+    cout << "Attempting to go over stringList maxSize" << endl;
+    for(i=0; i<30; i++)
+        stringList.insertEnd("Strawberry");
 
     return 0;                                   
 }
