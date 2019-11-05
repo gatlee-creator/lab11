@@ -205,14 +205,21 @@ Testing String List
     cout << "Searching for \"Grape\". Should return index 50" << endl;
     cout << stringList.seqSearch("Grape") << endl;
 
-    
-    cout << "stringList length: ";
-    cout << stringList.listSize() << endl;
+    //refresh on size and maxs
+    cout << "stringList length: " << stringList.listSize() << endl; 
+    cout << "stringList max size: " << stringList.maxListSize() << endl;
 
     //attempt to go over the list limit
     cout << "Attempting to go over stringList maxSize" << endl;
-    for(i=0; i<30; i++)
+    for(i=0; i<26; i++)
         stringList.insertEnd("Strawberry");
+
+/*
+============
+END OF TEST
+============
+*/
+
 
     return 0;                                   
 }
