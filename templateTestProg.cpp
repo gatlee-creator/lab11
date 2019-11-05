@@ -107,9 +107,42 @@ Testing Integer list & and all previous stub functions
 in this section
 =====================================
 */
-    
+    cout << "Creating integerlist of size 5" << endl;
     unorderedArrayListType<int> integerList(5);
+    
+    //here we will test isEmpty()
+    cout << "Testing if integerList is empty. Should return 1" << endl;
+    cout << integerList.isEmpty() << endl;
 
+    //test isFull()
+    cout << "Testing if integerList isFull. Should return 0" << endl;
+    cout << integerList.isFull() << endl;
+
+    //call insertAt 2 times 
+    cout << "Inserting 2 and 5 at positions 0, 1" << endl;
+    integerList.insertAt(0, 2);
+    integerList.insertAt(1, 5);
+    cout << "integerList: ";
+    integerList.print();
+
+    //check listSize()
+    cout << "Calling integerList listSize. Should return 2" << endl;
+    cout << integerList.listSize() << endl;
+
+    //call maxListSize()
+    cout << "Calling maxListSize. Should return 5" << endl;
+    cout << integerList.maxListSize() << endl;
+
+    //test clearList() here
+    cout << "Calling clearList and checking the new length" << endl;
+    integerList.clearList();
+    cout << "integerList: ";
+    integerList.print();
+    cout << "length: " << integerList.listSize() << endl;
+
+    //try the copy constructor 
+
+    //test for shallow copy by calling insertAt()
 
 
     return 0;                                   
