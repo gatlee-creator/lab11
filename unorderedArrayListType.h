@@ -25,7 +25,21 @@ template <class elemType>
 void unorderedArrayListType<elemType>::insertAt(int location, 
                                          const elemType& insertItem)
 {
-    //Complete this function stub
+    if (location < 0 || location >= this->maxSize)
+        cout << "The position of the item to be inserted "
+             << "is out of range." << endl;
+    else if (this->length >= this->maxSize)  //list is full
+        cout << "Cannot insert in a full list" << endl;
+    else
+    {
+     for (int i = this->length; i > location; i--)
+            this->list[i] = this->list[i - 1];	//move the elements down
+
+        this->list[location] = insertItem; //insert the item at
+                                     //the specified position
+
+        this->length++;
+    }
 } //end insertAt
 
 template <class elemType>
